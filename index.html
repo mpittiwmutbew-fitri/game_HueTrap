@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HueTrap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ================= MENU GAME (START SCREEN) ================= -->
+  <section id="screen-menu" class="screen active">
+    <div class="panel">
+      <h1 class="logo">HueTrap</h1>
+      <p class="tagline">Jangan percaya matamu — percaya warnanya.</p>
+
+      <button class="btn btn-primary" id="btnPlay">▶ Main</button>
+      <button class="btn btn-secondary" id="btnHowTo">❓ Cara Bermain</button>
+      <button class="btn btn-secondary" id="btnHighScore">🏆 Skor Tertinggi</button>
+
+      <p class="highscore-line">Rekor kamu: <span id="menuHighScore">0</span></p>
+    </div>
+  </section>
+
+  <!-- ================= CARA BERMAIN ================= -->
+  <section id="screen-howto" class="screen">
+    <div class="panel">
+      <h2>Cara Bermain</h2>
+      <ul class="howto-list">
+        <li>🔤 Sebuah kata warna akan muncul, ditulis dengan warna tinta yang berbeda.</li>
+        <li>🎯 Pilih kotak warna yang sesuai dengan warna TINTA-nya — bukan kata yang tertulis!</li>
+        <li>⏱ Jawab sebelum waktu habis. Waktunya makin cepat seiring level naik.</li>
+        <li>🔥 Jawab benar berturut-turut untuk menaikkan combo dan skor.</li>
+      </ul>
+      <button class="btn btn-primary" id="btnBackFromHowTo">Kembali</button>
+    </div>
+  </section>
+
+  <!-- ================= PEMILIHAN MODE ================= -->
+  <section id="screen-mode" class="screen">
+    <div class="panel">
+      <h2>Pilih Mode</h2>
+
+      <button class="mode-card" data-mode="classic">
+        <div class="mode-title">🎯 Classic</div>
+        <div class="mode-desc">3 nyawa. Level makin cepat seiring waktu.</div>
+      </button>
+
+      <button class="mode-card" data-mode="timeattack">
+        <div class="mode-title">⏱ Time Attack</div>
+        <div class="mode-desc">60 detik, jawab sebanyak mungkin.</div>
+      </button>
+
+      <button class="mode-card" data-mode="survival">
+        <div class="mode-title">💀 Survival Combo</div>
+        <div class="mode-desc">Sekali salah, game over. Combo melipatgandakan skor.</div>
+      </button>
+
+      <button class="mode-card" data-mode="zen">
+        <div class="mode-title">🌿 Zen</div>
+        <div class="mode-desc">Tanpa nyawa, waktu lebih longgar. Untuk latihan.</div>
+      </button>
+
+      <button class="btn btn-secondary" id="btnBackFromMode">Kembali</button>
+    </div>
+  </section>
+
+  <!-- ================= GAMEPLAY ================= -->
+  <section id="screen-game" class="screen">
+    <div class="card">
+      <div class="stats">
+        <span>Skor: <b id="hudScore">0</b></span>
+        <span id="hudCombo">Combo: x1</span>
+        <span id="hudLives">❤️❤️❤️</span>
+      </div>
+
+      <div class="timer-track"><div class="timer-fill" id="timerFill"></div></div>
+      <div class="timer-label" id="timerLabel"></div>
+
+      <div class="word" id="word">MERAH</div>
+
+      <div class="options" id="options"></div>
+
+      <div class="msg" id="msg"></div>
+    </div>
+  </section>
+
+  <!-- ================= GAME OVER ================= -->
+  <section id="screen-over" class="screen">
+    <div class="panel">
+      <h2 id="overTitle">Game Over</h2>
+      <p class="over-stat">Skor akhir: <b id="overScore">0</b></p>
+      <p class="over-stat">Combo tertinggi: <b id="overCombo">0</b></p>
+      <p class="over-newrecord" id="overNewRecord">🎉 Rekor Baru!</p>
+
+      <button class="btn btn-primary" id="btnPlayAgain">Main Lagi</button>
+      <button class="btn btn-secondary" id="btnBackToMenu">Kembali ke Menu</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
